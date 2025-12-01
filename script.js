@@ -23,14 +23,23 @@ function handleSearch() {
   const data = {
     "xoài": "xoai",
     "nhãn": "nhan",
+    "táo mèo":"tao meo",
+    "nấm":"nam",
+    "mận hậu":"mau hau",
     "vải": "vai",
     "trà": "tra",
     "chè": "tra",
     "tỏi": "toi",
+    "khoai":"khoai",
+    "rau":"rau",
+    "hạt điều":"hat dieu",
     "quế": "que",
     "chanh dây": "chanhday",
     "cà phê": "cafe",
-    "vú sữa": "vusua"
+    "vú sữa": "vusua",
+    "rau má":"rau",
+    "dừa":"dua",
+    "cam":"cam",
   };
 
   for (let k in data)
@@ -71,3 +80,4 @@ function sendNow() {
 
   setTimeout(() => addMsg(ai(text), "ai"), 350);
 }
+

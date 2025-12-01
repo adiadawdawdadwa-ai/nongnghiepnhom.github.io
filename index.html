@@ -1,208 +1,199 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nông Nghiệp Việt Nam - Toàn Quốc</title>
-<link href="https://fonts.googleapis.com/css2?
-family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap"
-rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nông Nghiệp Việt Nam - Toàn Quốc</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header>
-<h1>Nông Nghiệp Việt Nam Toàn Quốc</h1>
-<p>Khám phá sản phẩm đặc sắc, nghề nghiệp và công nghệ nông nghiệp Việt
-Nam</p>
-<div class="search-wrap">
-<input id="site-search" type="search" placeholder="Tìm nông sản: xoài,
-nhãn, vải, trà, tỏi, cà phê..." aria-label="Tìm nông sản">
-<button id="search-btn">Tìm</button>
-</div>
+  <h1>Nông Nghiệp Việt Nam Toàn Quốc</h1>
+  <p>Khám phá sản phẩm đặc sắc, nghề nghiệp và công nghệ nông nghiệp Việt Nam</p>
 </header>
+
 <nav>
-<a href="#products">Sản phẩm</a>
-<a href="#jobs">Nghề nghiệp</a>
-<a href="#tech">Công nghệ</a>
-<a href="#video">Video hiện nay</a>
+  <a href="#products">Sản phẩm</a>
+  <a href="#jobs">Nghề nghiệp</a>
+  <a href="#tech">Công nghệ</a>
+  <a href="#video">Video</a>
 </nav>
-<!-- ==== SẢN PHẨM ==== -->
+
+<!-- ======= TÌM KIẾM ======= -->
+<div class="search-box">
+  <input id="search-input" type="text" placeholder="Tìm nông sản (xoài, nhãn, trà, tỏi...)">
+  <button id="search-btn">Tìm</button>
+</div>
+
 <section id="products" class="section">
-<h2>Sản phẩm nông nghiệp các tỉnh</h2>
-•
-•
-•
-1
-<!-- Accordion Miền Bắc -->
-<div class="accordion">
-<div class="accordion-header">Miền Bắc</div>
-<div class="accordion-content">
-<div class="card" id="vai">
-<img src="images/vai.jpeg" alt="Vải Thiều Lục Ngạn">
-<div>
-<h3> Vải Thiều Lục Ngạn</h3>
-<p>Vải thiều Lục Ngạn, tỉnh Bắc Giang, là đặc sản nổi tiếng của
-miền Bắc Việt Nam...</p>
-</div>
-</div>
-<div class="card" id="nhan">
-<img src="images/nhan.jpg" alt="Nhãn Lồng Hưng Yên">
-<div>
-<h3> Nhãn Lồng Hưng Yên</h3>
-<p>Nhãn lồng Hưng Yên là đặc sản nổi tiếng của miền Bắc Việt
-Nam...</p>
-</div>
-</div>
-<div class="card" id="tra">
-<img src="images/tra.jpg" alt="Trà Tân Cương Thái Nguyên">
-<div>
-<h3> Trà Tân Cương Thái Nguyên</h3>
-<p>Trà Tân Cương Thái Nguyên là một trong những loại trà xanh nổi
-tiếng nhất Việt Nam...</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Accordion Miền Trung -->
-<div class="accordion">
-<div class="accordion-header">Miền Trung</div>
-<div class="accordion-content">
-<div class="card" id="toi">
-<img src="images/toi.jpg" alt="Tỏi Lý Sơn">
-<div>
-<h3> Tỏi Lý Sơn</h3>
-<p>Tỏi Lý Sơn là đặc sản nổi tiếng của huyện đảo Lý Sơn, Quảng
-Ngãi...</p>
-</div>
-</div>
-<div class="card" id="que">
-<img src="images/que.jpg" alt="Quế Trà Bồng">
-<div>
-<h3> Quế Trà Bồng Quảng Ngãi</h3>
-<p>Quế Trà Bồng là loại quế nổi tiếng ở huyện Trà Bồng, Quảng
-Ngãi...</p>
-</div>
-</div>
-2
-<div class="card" id="chanhday">
-<img src="images/chanhday1.jpg" alt="Chanh dây Lâm Đồng">
-<div>
-<h3> Chanh dây Lâm Đồng</h3>
-<p>Chanh dây Lâm Đồng nổi tiếng với vị chua dịu, thơm nồng và giàu
-vitamin C...</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Accordion Miền Nam -->
-<div class="accordion">
-<div class="accordion-header">Miền Nam</div>
-<div class="accordion-content">
-<div class="card" id="xoai">
-<img src="images/xoaicat.jpg" alt="Xoài Cát Hòa Lộc">
-<div>
-<h3> Xoài Cát Hòa Lộc</h3>
-<p>Xoài Cát Hòa Lộc là đặc sản nổi tiếng của miền Nam Việt Nam...</
-p>
-</div>
-</div>
-<div class="card" id="vusua">
-<img src="images/vusua.jpg" alt="Vú sữa Lò Rèn">
-<div>
-<h3> Vú sữa Lò Rèn</h3>
-<p>Vú sữa Lò Rèn là đặc sản miền Tây Việt Nam...</p>
-</div>
-</div>
-<div class="card" id="cafe">
-<img src="images/caphe2.jpg" alt="Cà phê Buôn Ma Thuột">
-<div>
-<h3> Cà phê Buôn Ma Thuột</h3>
-<p>Cà phê Buôn Ma Thuột nổi tiếng với hương thơm nồng, vị đậm đà và
-hậu ngọt lâu...</p>
-</div>
-</div>
-</div>
-</div>
+  <h2>Sản phẩm nông nghiệp các tỉnh</h2>
+
+  <!-- Accordion Miền Bắc -->
+  <div class="accordion">
+    <div class="accordion-header">Miền Bắc</div>
+    <div class="accordion-content">
+
+      <div class="card nongsan-card" id="vai">
+        <img src="images/vai.jpeg">
+        <div>
+          <h3>🌸 Vải Thiều Lục Ngạn</h3>
+          <p>Vải thiều Lục Ngạn nổi tiếng với vị ngọt thanh và mọng nước.</p>
+        </div>
+      </div>
+
+      <div class="card nongsan-card" id="nhan">
+        <img src="images/nhan.jpg">
+        <div>
+          <h3>🍐 Nhãn Lồng Hưng Yên</h3>
+          <p>Nhãn lồng cùi dày, hương thơm tự nhiên, rất ngọt.</p>
+        </div>
+      </div>
+
+      <div class="card nongsan-card" id="tra">
+        <img src="images/tra.jpg">
+        <div>
+          <h3>🍵 Trà Tân Cương</h3>
+          <p>Đậm vị – hậu ngọt – thơm lâu.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Miền Trung -->
+  <div class="accordion">
+    <div class="accordion-header">Miền Trung</div>
+    <div class="accordion-content">
+
+      <div class="card nongsan-card" id="toi">
+        <img src="images/toi.jpg">
+        <div>
+          <h3>🧄 Tỏi Lý Sơn</h3>
+          <p>Tỏi thơm cay nhẹ – đặc sản Quảng Ngãi.</p>
+        </div>
+      </div>
+
+      <div class="card nongsan-card" id="que">
+        <img src="images/que.jpg">
+        <div>
+          <h3>🌿 Quế Trà Bồng</h3>
+          <p>Giàu tinh dầu – thơm tự nhiên.</p>
+        </div>
+      </div>
+
+      <div class="card nongsan-card" id="chanhday">
+        <img src="images/chanhday1.jpg">
+        <div>
+          <h3>🍋 Chanh dây Lâm Đồng</h3>
+          <p>Thơm – chua nhẹ – nhiều nước.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Miền Nam -->
+  <div class="accordion">
+    <div class="accordion-header">Miền Nam</div>
+    <div class="accordion-content">
+
+      <div class="card nongsan-card" id="xoai">
+        <img src="images/xoaicat.jpg">
+        <div>
+          <h3>🥭 Xoài Cát Hòa Lộc</h3>
+          <p>Đậm ngọt – thơm – ít xơ.</p>
+        </div>
+      </div>
+
+      <div class="card nongsan-card" id="vusua">
+        <img src="images/vusua.jpg">
+        <div>
+          <h3>🥛 Vú sữa Lò Rèn</h3>
+          <p>Ngọt thanh – hương thơm dịu.</p>
+        </div>
+      </div>
+
+      <div class="card nongsan-card" id="cafe">
+        <img src="images/caphe2.jpg">
+        <div>
+          <h3>☕ Cà phê Buôn Ma Thuột</h3>
+          <p>Đậm vị – thơm lâu – nổi tiếng toàn cầu.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
-<!-- ==== NGHỀ NGHIỆP ==== -->
+
+<!-- ===== NGHỀ NGHIỆP ===== -->
 <section id="jobs" class="section">
-<h2>Nghề nghiệp nông nghiệp</h2>
-<div class="card">
-<div>
-<h3> Kỹ sư nông nghiệp</h3>
-<p> Yêu cầu: Đại học Nông Lâm</p>
-<p> Lương: 12-20 triệu/tháng</p>
-3
-</div>
-</div>
-<div class="card">
-<div>
-<h3> Nhân viên chế biến nông sản</h3>
-<p> Lương: 8-15 triệu/tháng</p>
-</div>
-</div>
-<div class="card">
-<div>
-<h3> Nhân viên kỹ thuật trồng trọt </h3>
-<p> Lương: 7-12 triệu/tháng</p>
-</div>
-</div>
-<div class="card">
-<div>
-<h3> Chuyên gia thủy sản / nuôi trồng thủy sản</h3>
-<p> Lương: 7-15 triệu/tháng</p>
-</div>
-</div>
+  <h2>Nghề nghiệp nông nghiệp</h2>
+
+  <div class="card">
+    <h3>👩‍🌾 Kỹ sư nông nghiệp</h3>
+    <p>Lương: 12–20 triệu</p>
+  </div>
+
+  <div class="card">
+    <h3>🛠 Nhân viên chế biến nông sản</h3>
+    <p>Lương: 8–15 triệu</p>
+  </div>
 </section>
-<!-- ==== CÔNG NGHỆ ==== -->
+
+<!-- ===== CÔNG NGHỆ ===== -->
 <section id="tech" class="section">
-<h2>Công nghệ nông nghiệp</h2>
-<div class="video-container">
-<video width="700" height="350" controls>
-<source src="video/video1.mp4" type="video/mp4">
-</video>
-</div>
-<div class="card">
-<div>
-<h3> Nhà kính tự động</h3>
-<p> Chi phí: 200-500 triệu</p>
-</div>
-</div>
+  <h2>Công nghệ nông nghiệp</h2>
+
+  <div class="video-container">
+    <video width="700" height="350" controls>
+      <source src="video/video1.mp4">
+    </video>
+  </div>
+
+  <div class="card">
+    <h3>🏡 Nhà kính tự động</h3>
+  </div>
+
+  <div class="card">
+    <h3>🚁 Drone phun thuốc</h3>
+  </div>
 </section>
-<!-- ==== VIDEO ==== -->
+
+<!-- ===== VIDEO ===== -->
 <section id="video" class="section">
-<h2>Video về nông nghiệp hiện nay</h2>
-<div style="text-align:center;">
-<video width="560" height="315" controls>
-<source src="video/video2.mp4" type="video/mp4">
-</video>
-</div>
+  <h2>Video về nông nghiệp</h2>
+  <div style="text-align:center;">
+    <video width="600" controls>
+      <source src="video/video2.mp4">
+    </video>
+  </div>
 </section>
-<!-- ==== FOOTER ==== -->
+
 <footer>
-<p>Liên hệ: Nhóm 1 lớp 12C</p>
-4
-<p>© Chủ đề Nông Nghiệp Việt Nam</p>
+  © Nông nghiệp Việt Nam – Nhóm 1
 </footer>
-<!-- ==== CHATBOT ==== -->
-<button id="chat-toggle" aria-label="Mở chat">
-<span class="chat-icon"> </span>
-<span class="chat-hint">Bạn muốn hỏi gì?</span>
+
+<!-- Chatbot + Toggle -->
+<button id="chat-toggle">
+  💬
+  <span class="chat-hint">Bạn muốn hỏi gì?</span>
 </button>
-<div id="chatbot" aria-hidden="true">
-<div id="chatbot-header">
- AI Nông Nghiệp
-<button id="chatbot-close" aria-label="Đóng chat"> </button>
+
+<div id="chatbot">
+  <div id="chatbot-header">
+    AI Nông Nghiệp 🌾
+    <span id="chatbot-close">✖</span>
+  </div>
+
+  <div id="chatbot-body">
+    <div id="chat-messages"></div>
+    <input id="chat-input" type="text" placeholder="Nhập câu hỏi...">
+    <button id="chat-send">Gửi</button>
+  </div>
 </div>
-<div id="chatbot-body">
-<div id="chat-messages" role="log" aria-live="polite"></div>
-<div class="chat-input-row">
-<input id="chat-input" type="text" placeholder="Nhập câu hỏi về nông
-sản...">
-<button id="chat-send">Gửi</button>
-</div>
-</div>
-</div>
+
 <script src="script.js"></script>
 </body>
 </html>

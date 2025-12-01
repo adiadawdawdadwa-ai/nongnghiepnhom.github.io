@@ -1,4 +1,4 @@
-// ========== ACCORDION ==========
+// ===== ACCORDION =====
 document.querySelectorAll(".accordion-header").forEach(h => {
   h.onclick = () => {
     const c = h.nextElementSibling;
@@ -6,92 +6,68 @@ document.querySelectorAll(".accordion-header").forEach(h => {
   };
 });
 
-// ========== TÌM KIẾM ==========
-const searchInput = document.getElementById("search-input");
-const searchBtn = document.getElementById("search-btn");
-
+// ===== SEARCH =====
 function scrollToCard(id) {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: "smooth" });
 }
 
-function handleSearch() {
-  const q = searchInput.value.toLowerCase().trim();
-  if (!q) return;
+document.getElementById("search-btn").onclick = handleSearch;
+document.getElementById("search-input").addEventListener("keypress", e => {
+  if (e.key === "Enter") handleSearch();
+});
 
-  const items = {
+function handleSearch() {
+  const q = document.getElementById("search-input").value.toLowerCase();
+
+  const data = {
     "xoài": "xoai",
-    "xoaicat": "xoai",
     "nhãn": "nhan",
     "vải": "vai",
     "trà": "tra",
     "chè": "tra",
     "tỏi": "toi",
     "quế": "que",
-    "chanh": "chanhday",
+    "chanh dây": "chanhday",
     "cà phê": "cafe",
-    "vusua": "vusua"
+    "vú sữa": "vusua"
   };
 
-  for (let key in items) {
-    if (q.includes(key)) {
-      scrollToCard(items[key]);
-      return;
-    }
-  }
+  for (let k in data)
+    if (q.includes(k)) return scrollToCard(data[k]);
 
-  alert("Không tìm thấy nông sản phù hợp.\nHãy thử: xoài, nhãn, vải, trà, tỏi, cà phê…");
+  alert("Không tìm thấy nông sản này.");
 }
 
-searchBtn.onclick = handleSearch;
-searchInput.addEventListener("keypress", e => {
-  if (e.key === "Enter") handleSearch();
-});
+// ===== CHATBOX =====
+const chat = document.getElementById("chatbot");
+document.getElementById("chat-toggle").onclick = () => chat.style.display = "block";
+document.getElementById("chatbot-close").onclick = () => chat.style.display = "none";
 
-// ========== CHATBOT ==========
-const box = document.getElementById("chatbot");
-const openBtn = document.getElementById("chat-toggle");
-const closeBtn = document.getElementById("chatbot-close");
-
-openBtn.onclick = () => box.style.display = "block";
-closeBtn.onclick = () => box.style.display = "none";
-
-const msgBox = document.getElementById("chat-messages");
-const input = document.getElementById("chat-input");
-const sendBtn = document.getElementById("chat-send");
-
-function addMsg(text, cls) {
-  let div = document.createElement("div");
-  div.className = cls;
-  div.textContent = text;
-  msgBox.appendChild(div);
-  msgBox.scrollTop = msgBox.scrollHeight;
+function addMsg(msg, cls) {
+  const m = document.createElement("div");
+  m.className = cls;
+  m.textContent = msg;
+  document.getElementById("chat-messages").appendChild(m);
 }
 
-function aiReply(msg) {
+function ai(msg) {
   msg = msg.toLowerCase();
-
-  if (msg.includes("xoài")) return "🥭 Xoài Cát Hòa Lộc rất ngọt và thơm!";
-  if (msg.includes("nhãn")) return "🍐 Nhãn Lồng Hưng Yên cùi dày – ngọt.";
-  if (msg.includes("vải")) return "🌸 Vải thiều Lục Ngạn mọng nước.";
-  if (msg.includes("trà") || msg.includes("chè")) return "🍵 Trà Tân Cương đậm – thơm lâu.";
-  if (msg.includes("tỏi")) return "🧄 Tỏi Lý Sơn cay nhẹ – thơm.";
-  if (msg.includes("cà phê")) return "☕ Cà phê Buôn Ma Thuột đậm vị.";
-
-  return "🤖 Mình chưa hiểu câu đó. Hãy hỏi về xoài, nhãn, vải, trà, tỏi nhé!";
+  if (msg.includes("xoài")) return "🥭 Xoài Cát Hòa Lộc rất ngọt!";
+  if (msg.includes("nhãn")) return "🍐 Nhãn Lồng Hưng Yên rất thơm!";
+  if (msg.includes("vải")) return "🌸 Vải thiều rất mọng nước!";
+  if (msg.includes("tỏi")) return "🧄 Tỏi Lý Sơn cực kỳ chất lượng!";
+  return "🤖 Bạn hỏi nông sản gì ạ?";
 }
 
-function sendMessage() {
-  let text = input.value.trim();
+document.getElementById("chat-send").onclick = sendNow;
+
+function sendNow() {
+  let text = document.getElementById("chat-input").value;
   if (!text) return;
 
   addMsg(text, "user");
-  input.value = "";
+  document.getElementById("chat-input").value = "";
 
-  setTimeout(() => addMsg(aiReply(text), "ai"), 400);
+  setTimeout(() => addMsg(ai(text), "ai"), 350);
 }
-
-sendBtn.onclick = sendMessage;
-input.addEventListener("keypress", e => {
-  if (e.key === "Enter") sendMessage();
-});

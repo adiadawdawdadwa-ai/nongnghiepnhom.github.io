@@ -228,3 +228,58 @@ nav a:hover {
 #chat-send:hover {
   background: #43A047;
 }
+/* ==== CENTER SEARCH BAR ==== */
+#search-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+#search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 70%;
+  max-width: 650px;
+}
+
+#search-input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  border: 2px solid #4CAF50;
+}
+
+#search-btn {
+  padding: 12px 20px;
+  background: #4CAF50;
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .25s;
+}
+
+#search-btn:hover {
+  background: #449D48;
+}
+
+/* ==== CENTER FOOTER ==== */
+footer {
+  text-align: center !important;
+  padding: 25px;
+  margin-top: 50px;
+  color: #333;
+  font-weight: 600;
+}
+
+footer p {
+  margin: 6px 0;
+  width: 100%;
+  text-align: center !important;
+}
+

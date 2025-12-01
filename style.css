@@ -1,97 +1,185 @@
-// ========== ACCORDION ==========
-document.querySelectorAll(".accordion-header").forEach(h => {
-  h.onclick = () => {
-    const c = h.nextElementSibling;
-    c.style.display = c.style.display === "block" ? "none" : "block";
-  };
-});
-
-// ========== TÌM KIẾM ==========
-const searchInput = document.getElementById("search-input");
-const searchBtn = document.getElementById("search-btn");
-
-function scrollToCard(id) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: "smooth" });
+/* Ảnh nền */
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background: url("anh nen.jpeg") center/cover no-repeat fixed;
+  backdrop-filter: blur(0px);
 }
 
-function handleSearch() {
-  const q = searchInput.value.toLowerCase().trim();
-  if (!q) return;
-
-  const items = {
-    "xoài": "xoai",
-    "xoaicat": "xoai",
-    "nhãn": "nhan",
-    "vải": "vai",
-    "trà": "tra",
-    "chè": "tra",
-    "tỏi": "toi",
-    "quế": "que",
-    "chanh": "chanhday",
-    "cà phê": "cafe",
-    "vusua": "vusua"
-  };
-
-  for (let key in items) {
-    if (q.includes(key)) {
-      scrollToCard(items[key]);
-      return;
-    }
-  }
-
-  alert("Không tìm thấy nông sản phù hợp.\nHãy thử: xoài, nhãn, vải, trà, tỏi, cà phê…");
+/* HEADER */
+header {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  backdrop-filter: blur(3px);
 }
 
-searchBtn.onclick = handleSearch;
-searchInput.addEventListener("keypress", e => {
-  if (e.key === "Enter") handleSearch();
-});
-
-// ========== CHATBOT ==========
-const box = document.getElementById("chatbot");
-const openBtn = document.getElementById("chat-toggle");
-const closeBtn = document.getElementById("chatbot-close");
-
-openBtn.onclick = () => box.style.display = "block";
-closeBtn.onclick = () => box.style.display = "none";
-
-const msgBox = document.getElementById("chat-messages");
-const input = document.getElementById("chat-input");
-const sendBtn = document.getElementById("chat-send");
-
-function addMsg(text, cls) {
-  let div = document.createElement("div");
-  div.className = cls;
-  div.textContent = text;
-  msgBox.appendChild(div);
-  msgBox.scrollTop = msgBox.scrollHeight;
+header h1 {
+  font-size: 2.5em;
 }
 
-function aiReply(msg) {
-  msg = msg.toLowerCase();
-
-  if (msg.includes("xoài")) return "🥭 Xoài Cát Hòa Lộc rất ngọt và thơm!";
-  if (msg.includes("nhãn")) return "🍐 Nhãn Lồng Hưng Yên cùi dày – ngọt.";
-  if (msg.includes("vải")) return "🌸 Vải thiều Lục Ngạn mọng nước.";
-  if (msg.includes("trà") || msg.includes("chè")) return "🍵 Trà Tân Cương đậm – thơm lâu.";
-  if (msg.includes("tỏi")) return "🧄 Tỏi Lý Sơn cay nhẹ – thơm.";
-  if (msg.includes("cà phê")) return "☕ Cà phê Buôn Ma Thuột đậm vị.";
-
-  return "🤖 Mình chưa hiểu câu đó. Hãy hỏi về xoài, nhãn, vải, trà, tỏi nhé!";
+nav {
+  background: rgba(0,0,0,0.6);
+  text-align: center;
+  padding: 12px;
 }
 
-function sendMessage() {
-  let text = input.value.trim();
-  if (!text) return;
-
-  addMsg(text, "user");
-  input.value = "";
-
-  setTimeout(() => addMsg(aiReply(text), "ai"), 400);
+nav a {
+  margin: 0 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
 }
 
-sendBtn.onclick = sendMessage;
-input.addEventListener("keypress", e => {
-  if (e.key === "Enter") sendMessage();
-});
+/* SECTION */
+.section {
+  background: rgba(255,255,255,0.9);
+  padding: 40px;
+  margin: 40px auto;
+  width: 90%;
+  border-radius: 14px;
+}
+
+/* Search */
+.search-box {
+  text-align: center;
+  margin: 25px;
+}
+
+.search-box input {
+  width: 260px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #666;
+}
+
+#search-btn {
+  padding: 10px 16px;
+  margin-left: 6px;
+  cursor: pointer;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+/* Accordion */
+.accordion {
+  margin-bottom: 20px;
+}
+
+.accordion-header {
+  background: #4CAF50;
+  color: white;
+  padding: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.accordion-content {
+  display: none;
+  padding: 18px;
+}
+
+/* Card */
+.card {
+  background: white;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 10px;
+  display: flex;
+  gap: 12px;
+}
+
+.card img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Video CSS */
+.video-container {
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+}
+
+/* Chatbot */
+#chat-toggle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #4CAF50;
+  color: white;
+  font-size: 24px;
+  padding: 18px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.chat-hint {
+  position: absolute;
+  right: 70px;
+  top: 8px;
+  background: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+#chatbot {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  width: 330px;
+  height: 420px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  display: none;
+}
+
+#chatbot-header {
+  background: #2E7D32;
+  color: white;
+  padding: 12px;
+  text-align: center;
+}
+
+#chatbot-close {
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+}
+
+#chat-messages {
+  height: 250px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.user {
+  text-align: right;
+  color: blue;
+}
+
+.ai {
+  text-align: left;
+  color: green;
+}
+
+#chat-input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px;
+}

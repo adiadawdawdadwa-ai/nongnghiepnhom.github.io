@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Bản đồ nông sản Việt Nam</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#f4fff2;
+    text-align:center;
+    margin:0;
+}
+h1{
+    background:#2e7d32;
+    color:white;
+    padding:15px;
+    margin:0;
+}
+.map-container{
+    position:relative;
+    width:420px;
+    margin:30px auto;
+}
+.map-container img{ width:100%; }
+
+.region{
+    position:absolute;
+    padding:10px 15px;
+    background:#ff9800;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+#region:hover{background:#e65100;}
+#bac{ top:40px; left:140px;}
+#trung{ top:160px; left:150px;}
+#nam{ top:300px; left:150px;}
+
+#infoBox{
+    width:75%;
+    margin:20px auto;
+    padding:20px;
+    background:white;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    display:none;
+    text-align:left;
+}
+li{margin:8px 0;}
+</style>
+</head>
+
+<body>
+
+<h1>🗺️ Khám phá nông sản Việt Nam theo vùng miền</h1>
+
+<div class="map-container">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Vietnam_location_map.svg">
+
+<div class="region" id="bac" onclick="showRegion('bac')">MIỀN BẮC</div>
+<div class="region" id="trung" onclick="showRegion('trung')">MIỀN TRUNG</div>
+<div class="region" id="nam" onclick="showRegion('nam')">MIỀN NAM</div>
+</div>
+
+<div id="infoBox"></div>
+
+<script>
+function showRegion(region){
+let box=document.getElementById("infoBox");
+
+if(region==="bac"){
+box.innerHTML=`
+<h2>🌿 Miền Bắc</h2>
+<ul>
+<li>🍒 Vải thiều Lục Ngạn – Bắc Giang</li>
+<li>🍯 Nhãn lồng – Hưng Yên</li>
+<li>🍏 Táo mèo – Yên Bái</li>
+<li>🍄 Nấm hương rừng – Lạng Sơn</li>
+<li>🍑 Mận hậu – Sơn La</li>
+<li>🍵 Trà Tân Cương – Thái Nguyên</li>
+</ul>`;
+}
+
+if(region==="trung"){
+box.innerHTML=`
+<h2>🌴 Miền Trung</h2>
+<ul>
+<li>🧄 Tỏi Lý Sơn – Quảng Ngãi</li>
+<li>🍠 Khoai lang Nhật – Quảng Nam</li>
+<li>🥬 Rau Trà Quế – Hội An</li>
+<li>🥜 Hạt điều – Bình Định</li>
+<li>🌿 Quế Trà Bồng – Quảng Ngãi</li>
+<li>🍈 Chanh dây – Lâm Đồng</li>
+</ul>`;
+}
+
+if(region==="nam"){
+box.innerHTML=`
+<h2>🌾 Miền Nam</h2>
+<ul>
+<li>🥭 Xoài Cát Hòa Lộc – Tiền Giang</li>
+<li>🍏 Vú sữa Lò Rèn – Vĩnh Long</li>
+<li>🥬 Rau má miền Nam</li>
+<li>🥥 Dừa – Bến Tre</li>
+<li>🍊 Cam sành – Vĩnh Long</li>
+<li>☕ Cà phê – Buôn Ma Thuột</li>
+</ul>`;
+}
+
+box.style.display="block";
+}
+</script>
+
+</body>
+</html>

@@ -283,3 +283,18 @@ footer p {
   text-align: center !important;
 }
 
+.map-btn{
+    display:inline-block;
+    padding:12px 20px;
+    background:#2e7d32;
+    color:white;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    margin:15px;
+}
+
+.map-btn:hover{
+    background:#1b5e20;
+}
+

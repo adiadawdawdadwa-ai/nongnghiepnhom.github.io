@@ -284,14 +284,16 @@ footer p {
 }
 
 .map-btn{
-    display:inline-block;
-    padding:12px 20px;
+    display:block;          
+    width:fit-content;      
+    margin:20px auto;       
+    padding:12px 22px;
     background:#2e7d32;
     color:white;
     border-radius:8px;
     text-decoration:none;
     font-weight:bold;
-    margin:15px;
+    text-align:center;
 }
 
 .map-btn:hover{

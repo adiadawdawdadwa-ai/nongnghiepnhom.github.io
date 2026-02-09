@@ -22,21 +22,28 @@ h1{
     width:420px;
     margin:30px auto;
 }
-.map-container img{ width:100%; }
+.map-container img{
+    width:100%;
+    border-radius:10px;
+}
 
+/* nút miền */
 .region{
     position:absolute;
-    padding:10px 15px;
+    padding:10px 16px;
     background:#ff9800;
     color:white;
     border-radius:10px;
     cursor:pointer;
     font-weight:bold;
+    box-shadow:0 3px 8px rgba(0,0,0,0.3);
 }
-#region:hover{background:#e65100;}
-#bac{ top:40px; left:140px;}
-#trung{ top:160px; left:150px;}
-#nam{ top:300px; left:150px;}
+.region:hover{background:#e65100;}
+
+/* vị trí mới khớp bản đồ tỉnh */
+#bac{ top:70px; left:120px;}
+#trung{ top:200px; left:140px;}
+#nam{ top:330px; left:130px;}
 
 #infoBox{
     width:75%;
@@ -57,11 +64,14 @@ li{margin:8px 0;}
 <h1>🗺️ Khám phá nông sản Việt Nam theo vùng miền</h1>
 
 <div class="map-container">
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Vietnam_location_map.svg">
 
-<div class="region" id="bac" onclick="showRegion('bac')">MIỀN BẮC</div>
-<div class="region" id="trung" onclick="showRegion('trung')">MIỀN TRUNG</div>
-<div class="region" id="nam" onclick="showRegion('nam')">MIỀN NAM</div>
+    <!-- ẢNH BẢN ĐỒ TỪ THƯ MỤC IMAGES -->
+    <img src="images/bandovietnam.png">
+
+    <div class="region" id="bac" onclick="showRegion('bac')">MIỀN BẮC</div>
+    <div class="region" id="trung" onclick="showRegion('trung')">MIỀN TRUNG</div>
+    <div class="region" id="nam" onclick="showRegion('nam')">MIỀN NAM</div>
+
 </div>
 
 <div id="infoBox"></div>
